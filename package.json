@@ -14,10 +14,13 @@
     "clean": "gatsby clean",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
-  "license": "0BSD",
+  "license": "GAGPL",
   "dependencies": {
     "gatsby": "^2.26.1",
     "gatsby-plugin-offline": "^3.7.0",
+    "gatsby-source-filesystem": "^2.8.0",
+    "gatsby-transformer-csv": "^2.7.0",
+    "gatsby-transformer-json": "^2.8.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
