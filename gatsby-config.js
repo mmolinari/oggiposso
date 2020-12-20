@@ -3,4 +3,5 @@ module.exports = {
     title: "oggiposso",
   },
   plugins: ["gatsby-plugin-offline"],
+  pathPrefix: "/oggiposso",
 };
