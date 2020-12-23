@@ -15,4 +15,6 @@ Didattica a distanza per la scuola secondaria di secondo grado, per le classi di
 
 Sono sospese tutte le competizioni sportive salvo quelle riconosciute di interesse nazionale dal CONI e CIP. Sospese le attività nei centri sportivi. Rimane consentito svolgere attività motoria nei pressi della propria abitazione e attività sportiva solo all’aperto in forma individuale.
 
-Sono chiusi musei e mostre; chiusi anche teatri, cinema, palestre, attività di sale giochi, sale scommesse, bingo, anche nei bar e nelle tabaccherie. Per i mezzi di trasporto pubblico è consentito il riempimento solo fino al 50%, fatta eccezione per i mezzi di trasporto scolastico."
+Sono chiusi musei e mostre; chiusi anche teatri, cinema, palestre, attività di sale giochi, sale scommesse, bingo, anche nei bar e nelle tabaccherie.
+
+Per i mezzi di trasporto pubblico è consentito il riempimento solo fino al 50%, fatta eccezione per i mezzi di trasporto scolastico.

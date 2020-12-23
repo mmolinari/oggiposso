@@ -5,9 +5,11 @@ language: "it"
 ---
 Vietato circolare dalle ore 22 alle ore 5 del mattino, salvo comprovati motivi di lavoro, necessità e salute.
 
-**Vietati gli spostamenti in entrata e in uscita da una Regione all’altra, salvo comprovati motivi di lavoro, studio, salute, necessità.** Raccomandazione di evitare spostamenti non necessari nel corso della giornata all'interno del proprio Comune.
+**Vietati gli spostamenti in entrata e in uscita da una Regione all’altra, salvo comprovati motivi di lavoro, studio, salute, necessità.**
 
-Chiusura dei centri commerciali nei giorni festivi e prefestivi ad eccezione delle farmacie,  parafarmacie, punti vendita di generi alimentari, tabaccherie ed edicole al loro interno.
+Raccomandazione di evitare spostamenti non necessari nel corso della giornata all'interno del proprio Comune.
+
+Chiusura dei centri commerciali nei giorni festivi e prefestivi ad eccezione delle farmacie, parafarmacie, punti vendita di generi alimentari, tabaccherie ed edicole al loro interno.
 
 Chiusura di musei e mostre.
 

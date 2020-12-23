@@ -3,9 +3,11 @@ id: "orange"
 label: "arancione"
 language: "it"
 ---
+Vietati gli spostamenti in entrata e in uscita da una Regione all’altra e da un Comune all’altro, salvo comprovati motivi di lavoro, studio, salute, necessità.
+
 Vietato circolare dalle ore 22 alle ore 5 del mattino, salvo comprovati motivi di lavoro, necessità e salute.
 
-Vietati gli spostamenti in entrata e in uscita da una Regione all’altra e da un Comune all’altro, salvo comprovati motivi di lavoro, studio, salute, necessità. Raccomandazione di evitare spostamenti non necessari nel corso della giornata all'interno del proprio Comune.
+Raccomandazione di evitare spostamenti non necessari nel corso della giornata all'interno del proprio Comune.
 
 Chiusura di bar e ristoranti, 7 giorni su 7. L’asporto è consentito fino alle ore 22. Per la consegna a domicilio non ci sono restrizioni.
 

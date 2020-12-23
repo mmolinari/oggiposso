@@ -7,8 +7,6 @@ import Layout from "../components/layout";
 
 
 export default function Index({ data, location }) {
-    console.log(location);
-
     const regionsDates = {};
     data.allRegionsZonesCsv.edges.forEach(function (item, index) {
         regionsDates[item.node.Date] = item.node;
@@ -24,7 +22,10 @@ export default function Index({ data, location }) {
         zoneLabels[item.frontmatter.id] = item.frontmatter.label;
     });
 
-    const initialState = {region: 0, date: 0};
+    const d = new Date();
+    const today = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear();
+
+    const initialState = {region: 0, date: today};
 
     function reducer(state, action) {
         switch (action.type) {
@@ -71,6 +72,28 @@ export default function Index({ data, location }) {
         return state.region !== 0 ? Regions[state.region] : '';
     }
 
+    function getHeader() {
+        let code = getZoneCode();
+        if (code) {
+            if (sameZones(state.date)) {
+                return "Tutte le regioni, " + getDate() + ": " + getZoneLabel();
+            }
+            else {
+                return getRegion() + ", " + getDate() + ": " + getZoneLabel();
+            }
+        }
+    }
+
+    // Returns whether all regions are in the same zone.
+    function sameZones(date) {
+        const dayZones = Object.values(regionsDates[date]);
+        const uniqueZones = dayZones.filter((value, index, self) => {
+            return self.indexOf(value) === index;
+        });
+        // Date is also a property.
+        return uniqueZones.length === 2;
+    }
+
     const siteTitle = "Oggi Posso";
 
     const [state, dispatch] = useReducer(reducer, initialState);
@@ -80,8 +103,8 @@ export default function Index({ data, location }) {
             <form>
                 <RegionSelector regions={Regions} state={state} dispatch={dispatch} />
                 <DateSelector dates={Object.keys(regionsDates)} state={state} dispatch={dispatch} />
-                <h2>
-                    {getRegion()}, {getDate()}: {getZoneLabel()}
+                <h2 className={getZoneCode()}>
+                    { getHeader() }
                 </h2>
                 <div dangerouslySetInnerHTML={{ __html: getZoneText() }} />
             </form>

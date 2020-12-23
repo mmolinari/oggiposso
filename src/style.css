@@ -331,3 +331,23 @@ a:focus {
     list-style-position: inside;
   }
 }
+
+.yellow {
+  color: goldenrod;
+}
+
+.yellow_christmas {
+  color: goldenrod;
+}
+
+.orange {
+  color: darkorange;
+}
+
+.red {
+  color: darkred;
+}
+
+.red_christmas {
+  color: darkred;
+}

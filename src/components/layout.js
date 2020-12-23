@@ -20,9 +20,11 @@ const Layout = ({ location, title, children }) => {
     )
   }
 
+  // @todo: display site name?
+
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">{header}</header>
+      <header className="global-header"></header>
       <main>{children}</main>
       <footer>
           <a href="/">Termini di utilizzo</a> - {` `}
