@@ -1,14 +1,36 @@
-import React from "react"
+import React, { useReducer } from "react"
 import { graphql } from "gatsby"
 import { Zones } from "../models/zones";
 import { Regions } from "../models/regions";
+import RegionSelector from "../components/regionSelector";
+import DateSelector from "../components/dateSelector";
+
 
 export default function MyFiles({ data }) {
     console.log(data);
-    console.log(Zones);
-    console.log(Regions);
+    const dates = data.allRegionsZonesCsv.edges.map(x => x.node.Date);
+
+    const initialState = {region: 0, date: 0};
+
+    function reducer(state, action) {
+        switch (action.type) {
+            case 'region':
+                return {region: action.region, date: state.date};
+            case 'date':
+                return {region: state.region, date: action.date};
+            default:
+                throw new Error();
+        }
+    }
+
+    const [state, dispatch] = useReducer(reducer, initialState);
+
     return (
-        <div>Hello world</div>
+        <form>
+            <RegionSelector regions={Regions} state={state} dispatch={dispatch} />
+            <DateSelector dates={dates} state={state} dispatch={dispatch} />
+            {state.region} on {state.date}
+        </form>
     )
 }
 
@@ -17,7 +39,7 @@ export const query = graphql`
       allRegionsZonesCsv {
         edges {
           node {
-            Data
+            Date
             Abruzzo
             Basilicata
             Calabria
