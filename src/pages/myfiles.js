@@ -41,14 +41,13 @@ export const query = graphql`
           }
         }
       }
-      allDataJson {
+      allMarkdownRemark {
         nodes {
-          id
-          arancione
-          giallo
-          giallo_natale
-          rosso
-          rosso_natale
+          html
+          frontmatter {
+            id
+            language
+          }
         }
       }
     }

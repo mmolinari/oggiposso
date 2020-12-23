@@ -1,7 +1,7 @@
 export const Zones = {
-    "giallo" : [],
-    "giallo_natale": [],
-    "arancione": [],
-    "rosso": [],
-    "rosso_natale": [],
+    "yellow" : [],
+    "yellow_christmas": [],
+    "orange": [],
+    "red": [],
+    "red_christmas": [],
 };
