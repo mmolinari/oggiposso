@@ -48,13 +48,22 @@ export default function MyFiles({ data }) {
         }
     }
 
+    function getDate() {
+        return state.date !== 0 ? state.date : '';
+    }
+
+    function getRegion() {
+        return state.region !== 0 ? Regions[state.region] : '';
+    }
+
     const [state, dispatch] = useReducer(reducer, initialState);
 
     return (
         <form>
             <RegionSelector regions={Regions} state={state} dispatch={dispatch} />
             <DateSelector dates={Object.keys(regionsDates)} state={state} dispatch={dispatch} />
-            {getZoneText()}
+            {getRegion()} {getDate()}
+            <div dangerouslySetInnerHTML={{ __html: getZoneText() }} />
         </form>
     )
 }
