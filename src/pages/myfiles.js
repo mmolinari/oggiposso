@@ -1,14 +1,20 @@
 import React, { useReducer } from "react"
 import { graphql } from "gatsby"
-import { Zones } from "../models/zones";
 import { Regions } from "../models/regions";
 import RegionSelector from "../components/regionSelector";
 import DateSelector from "../components/dateSelector";
 
 
 export default function MyFiles({ data }) {
-    console.log(data);
-    const dates = data.allRegionsZonesCsv.edges.map(x => x.node.Date);
+    const regionsDates = {};
+    data.allRegionsZonesCsv.edges.forEach(function (item, index) {
+        regionsDates[item.node.Date] = item.node;
+    });
+
+    const zones = {};
+    data.allMarkdownRemark.nodes.forEach(function (item, index) {
+        zones[item.frontmatter.id] = item.html;
+    });
 
     const initialState = {region: 0, date: 0};
 
@@ -23,13 +29,32 @@ export default function MyFiles({ data }) {
         }
     }
 
+    function getZoneCode() {
+        if (state.region !== 0 && state.date !== 0) {
+            return regionsDates[state.date][state.region];
+        }
+        else {
+            return '';
+        }
+    }
+
+    function getZoneText() {
+        const code = getZoneCode();
+        if (code) {
+            return zones[code];
+        }
+        else {
+            return "Per favore scegli una regione e una data.";
+        }
+    }
+
     const [state, dispatch] = useReducer(reducer, initialState);
 
     return (
         <form>
             <RegionSelector regions={Regions} state={state} dispatch={dispatch} />
-            <DateSelector dates={dates} state={state} dispatch={dispatch} />
-            {state.region} on {state.date}
+            <DateSelector dates={Object.keys(regionsDates)} state={state} dispatch={dispatch} />
+            {getZoneText()}
         </form>
     )
 }

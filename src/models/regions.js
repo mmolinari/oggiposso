@@ -1,3 +1,4 @@
+// Map keys to labels.
 export const Regions = {
     "Abruzzo": "Abruzzo",
     "Basilicata": "Basilicata",
