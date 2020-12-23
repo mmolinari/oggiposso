@@ -1,8 +1,6 @@
 import React from "react"
 
-function DateSelector(props) {
-    const { dates, state, dispatch } = props;
-
+function DateSelector({ dates, state, dispatch }) {
     const handleChange = (event) => {
         dispatch({type: 'date', 'date': event.target.value});
     }

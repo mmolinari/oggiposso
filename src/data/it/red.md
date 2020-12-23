@@ -1,9 +1,8 @@
 ---
 id: "red"
+label: "rosso"
 language: "it"
 ---
-## Rosso
-
 È vietato ogni spostamento, anche all’interno del proprio Comune, in qualsiasi orario, salvo che per motivi di lavoro, necessità e salute; vietati gli spostamenti da una Regione all’altra e da un Comune all’altro.
 
 Chiusura di bar e ristoranti, 7 giorni su 7. L’asporto è consentito fino alle ore 22. Per la consegna a domicilio non ci sono restrizioni.
