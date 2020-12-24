@@ -111,7 +111,7 @@ export default function Index({ data, location }) {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     return (
-        <Layout location={location} title={siteTitle}>
+        <Layout location={location}>
             <form>
                 <RegionSelector regions={Regions} state={state} dispatch={dispatch} />
                 <DateSelector dates={Object.keys(regionsDates)} state={state} dispatch={dispatch} />
