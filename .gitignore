@@ -2,3 +2,4 @@ node_modules/
 .cache/
 public
 .idea/
+/purge_cf.sh

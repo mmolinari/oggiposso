@@ -12,7 +12,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build && echo \"www.oggiposso.it\" > public/CNAME && touch public/.nojekyll && gh-pages -d public"
+    "deploy": "gatsby build && echo \"www.oggiposso.it\" > public/CNAME && touch public/.nojekyll && gh-pages -d public && ./purge_cf.sh"
   },
   "license": "GNU Affero GPL",
   "dependencies": {
