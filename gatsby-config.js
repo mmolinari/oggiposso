@@ -31,6 +31,4 @@ module.exports = {
       },
     },
   ],
-  // @todo: likely reset to / when moving to oggiposso.it
-  pathPrefix: "/",
 };
