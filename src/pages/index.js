@@ -38,26 +38,38 @@ export default function Index({ data, location }) {
         }
     }
 
-    function getZoneCode() {
-        if (state.region !== 0 && state.date !== 0) {
-            return regionsDates[state.date][state.region];
+    function getZoneCode(date, region) {
+        if (region !== 0 && date !== 0) {
+            return regionsDates[date][region];
         }
         else {
             return '';
         }
     }
 
+    function getCurrentZoneCode() {
+        let code = getZoneCode(state.date, state.region);
+        // If all regions are in the same zone, the region is not mandatory.
+        if (sameZones(state.date) && code === "") {
+            code = getZoneCode(state.date, 'Lombardia');
+        }
+        return code;
+    }
+
     function getZoneLabel() {
-        const code = getZoneCode();
+        const code = getCurrentZoneCode();
         if (code) {
             return zoneLabels[code];
         }
     }
 
     function getZoneText() {
-        const code = getZoneCode();
+        const code = getCurrentZoneCode();
         if (code) {
             return zones[code];
+        }
+        else if (sameZones(state.date)) {
+            return zones[getZoneCode(state.date, 'Lombardia')];
         }
         else {
             return "Per favore scegli una regione e una data.";
@@ -73,7 +85,7 @@ export default function Index({ data, location }) {
     }
 
     function getHeader() {
-        let code = getZoneCode();
+        let code = getCurrentZoneCode();
         if (code) {
             if (sameZones(state.date)) {
                 return "Tutte le regioni, " + getDate() + ": " + getZoneLabel();
@@ -103,7 +115,7 @@ export default function Index({ data, location }) {
             <form>
                 <RegionSelector regions={Regions} state={state} dispatch={dispatch} />
                 <DateSelector dates={Object.keys(regionsDates)} state={state} dispatch={dispatch} />
-                <h2 className={getZoneCode()}>
+                <h2 className={getCurrentZoneCode()}>
                     { getHeader() }
                 </h2>
                 <div dangerouslySetInnerHTML={{ __html: getZoneText() }} />
