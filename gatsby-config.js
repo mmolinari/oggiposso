@@ -15,5 +15,5 @@ module.exports = {
     `gatsby-transformer-remark`
   ],
   // @todo: likely reset to / when moving to oggiposso.it
-  pathPrefix: "/oggiposso",
+  pathPrefix: "/",
 };
