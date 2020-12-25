@@ -17,6 +17,7 @@ export const Regions = {
     "Sicilia": "Sicilia",
     "Toscana": "Toscana",
     "Trentino_Alto_Adige": "Trentino-Alto Adige",
+    "Umbria": "Umbria",
     "Valle_d_Aosta": "Valle d'Aosta",
     "Veneto": "Veneto",
 };
