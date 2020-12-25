@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 import LastUpdate from "./last-update";
 import Sources from "./sources";
-import CookieConsent from "react-cookie-consent";
 
 const Layout = ({ location, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -42,16 +41,6 @@ const Layout = ({ location, children }) => {
 
           <LastUpdate></LastUpdate>
           <Sources></Sources>
-
-          <!--
-          <CookieConsent
-              location="bottom"
-              buttonText="Accept"
-              declineButtonText="Decline"
-              cookieName="gatsby-gdpr-google-tagmanager">
-              This site uses cookies ...
-          </CookieConsent>
-          -->
       </footer>
     </div>
   )
