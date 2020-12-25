@@ -1,7 +1,7 @@
 import React from "react"
 import {graphql, StaticQuery} from "gatsby"
 
-export default function LastUpdate({ data, location }) {
+export default function LastUpdate() {
   return (
       <StaticQuery
           query={graphql`

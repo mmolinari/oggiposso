@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import LastUpdate from "./last-update";
+import Sources from "./sources";
 
 const Layout = ({ location, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -39,6 +40,7 @@ const Layout = ({ location, children }) => {
           </div>
 
           <LastUpdate></LastUpdate>
+          <Sources></Sources>
       </footer>
     </div>
   )
