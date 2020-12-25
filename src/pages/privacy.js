@@ -48,7 +48,7 @@ export default function Privacy({ location }) {
             </p>
 
             <p>
-                Questo sito non utilizza direttamente cookie, ma utilizza servizi di Google, Github e Cloudflare che potrebbero fare utilizzo di cookie, per esempio per generare le statistiche del sito e per evitare utilizzi scorretti del sito. Ti rimandiamo alla privacy policy di questi servizi riguardo al loro utilizzo dei cookie.
+                Questo sito non utilizza cookie, ma utilizza il servizio di Cloudflare che fa utilizzo di un cookie, chiamato __cfduid, che viene usato principalmente contro i bot, che non contiene informazioni personali che possono essere decodificate, e verrà cancellato nel 2021 come si può leggere qui: https://blog.cloudflare.com/deprecating-cfduid-cookie/.
             </p>
 
             <p>
