@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import LastUpdate from "./last-update";
 
 const Layout = ({ location, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -29,11 +30,15 @@ const Layout = ({ location, children }) => {
       <header className="global-header"></header>
       <main>{children}</main>
       <footer>
-          <Link to="/">Home</Link> - {` `}
-          <Link to="/terms">Termini di utilizzo</Link> - {` `}
-          <Link to="/privacy">Informativa sulla privacy</Link> - {` `}
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiuthLNYyeeOd1n5J0dHclP-3mrRvv8K4lQGzkBlGem8-nzA/viewform">Contatti</a> - {` `}
-          <a href="https://github.com/mmolinari/oggiposso">GitHub</a>
+          <div>
+              <Link to="/">Home</Link> - {` `}
+              <Link to="/terms">Termini di utilizzo</Link> - {` `}
+              <Link to="/privacy">Informativa sulla privacy</Link> - {` `}
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiuthLNYyeeOd1n5J0dHclP-3mrRvv8K4lQGzkBlGem8-nzA/viewform">Contatti</a> - {` `}
+              <a href="https://github.com/mmolinari/oggiposso">GitHub</a>
+          </div>
+
+          <LastUpdate></LastUpdate>
       </footer>
     </div>
   )
