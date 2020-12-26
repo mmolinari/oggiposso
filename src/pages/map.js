@@ -28,9 +28,7 @@ export default function Index({ data, location }) {
     const d = new Date();
     const today = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear();
 
-    const region = window.localStorage.getItem('region') ?? 0;
-
-    const initialState = {region: region, date: today};
+    const initialState = {region: 0, date: today};
 
     function reducer(state, action) {
         switch (action.type) {
@@ -70,16 +68,27 @@ export default function Index({ data, location }) {
         }
 
         function error() {
-            console.log('Unable to retrieve your location');
+            console.log('Unable to retrieve your location, will not bother you again');
+            // Do not bug people if they did not allow geolocation.
+            localStorage.setItem('avoid_geolocation', '1');
         }
 
         if(!navigator.geolocation) {
             console.log('Geolocation is not supported by your browser');
         } else {
             // No need to query if we already have a region.
-            if (initialState.region === 0) {
-                console.log('Locating...');
-                navigator.geolocation.getCurrentPosition(success, error);
+            if (state.region === 0) {
+                // localStorage calls cannot live in the constructor, or compilation will fail.
+                const storedRegion = localStorage.getItem('region') ?? 0;
+                const avoidGeolocation = localStorage.getItem('avoid_geolocation') ?? '0';
+                if (storedRegion === 0 && avoidGeolocation === "0") {
+                    console.log('Locating...');
+                    navigator.geolocation.getCurrentPosition(success, error);
+                }
+                else {
+                    // Use the region from the localStorage
+                    dispatch({type: 'region', 'region': storedRegion});
+                }
             }
         }
     }, []);
