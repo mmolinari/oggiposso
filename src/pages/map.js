@@ -26,7 +26,9 @@ export default function Index({ data, location }) {
     const d = new Date();
     const today = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear();
 
-    const initialState = {region: 0, date: today};
+    const region = window.localStorage.getItem('region') ?? 0;
+
+    const initialState = {region: region, date: today};
 
     function reducer(state, action) {
         switch (action.type) {
@@ -38,6 +40,12 @@ export default function Index({ data, location }) {
                 throw new Error();
         }
     }
+
+    const [state, dispatch] = useReducer(reducer, initialState);
+
+    React.useEffect(() => {
+        localStorage.setItem('region', state.region);
+    }, [state]);
 
     function getZoneCode(date, region) {
         if (region !== 0 && date !== 0) {
@@ -108,8 +116,6 @@ export default function Index({ data, location }) {
     }
 
     const siteTitle = "Oggi Posso";
-
-    const [state, dispatch] = useReducer(reducer, initialState);
 
     return (
         <Layout location={location}>
