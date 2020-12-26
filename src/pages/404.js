@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import {Link} from "gatsby"
 
 // styles
 const pageStyles = {
@@ -27,25 +27,25 @@ const codeStyles = {
 // markup
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
+    <main style={ pageStyles }>
       <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
+      <h1 style={ headingStyles }>Pagina non trovata</h1>
+      <p style={ paragraphStyles }>
+        Spiacente{ " " }
         <span role="img" aria-label="Pensive emoji">
           😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
+        </span>{ " " }
+        ma questa pagina non esiste... hai messo la mascherina? 😷
+        <br/>
+        { process.env.NODE_ENV === "development" ? (
           <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
+            <br/>
+            Try creating a page in <code style={ codeStyles }>src/pages/</code>.
+            <br/>
           </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
+        ) : null }
+        <br/>
+        <Link to="/">Torna alla pagina principale</Link>.
       </p>
     </main>
   )
