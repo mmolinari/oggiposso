@@ -18,5 +18,17 @@ module.exports = {
     },
     `gatsby-transformer-csv`,
     `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Oggi posso`,
+        short_name: `Oggi posso`,
+        start_url: `/`,
+        background_color: `#228B22`,
+        theme_color: `#228B22`,
+        display: `fullscreen`,
+        icon: `static/images/clover.png`,
+      },
+    },
   ],
 };
