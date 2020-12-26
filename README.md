@@ -5,3 +5,10 @@ I apologize: I'm aware this is overengineered, but I wanted to investigate some 
 PRs to fix code and data are welcome.
 
 TopoJSON source: https://github.com/openpolis/geojson-italy
+
+## Developement
+
+```
+npm install
+gatsby develop
+```

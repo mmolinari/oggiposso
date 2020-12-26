@@ -29,7 +29,7 @@ export default function Index({ data, location }) {
     const d = new Date();
     const today = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear();
 
-    const initialState = {region: 0, date: today};
+    const initialState = {region: '0', date: today};
 
     function reducer(state, action) {
         switch (action.type) {
@@ -45,7 +45,7 @@ export default function Index({ data, location }) {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     React.useEffect(() => {
-        if (state.region !== 0) {
+        if (state.region !== '0') {
             localStorage.setItem('region', state.region);
         }
     }, [state]);
@@ -78,10 +78,10 @@ export default function Index({ data, location }) {
             console.log('Geolocation is not supported by your browser');
         } else {
             // No need to query if we already have a region.
-            if (state.region === 0) {
-                const storedRegion = localStorage.getItem('region') ?? 0;
+            if (state.region === '0') {
+                const storedRegion = localStorage.getItem('region') ?? '0';
                 const avoidGeolocation = localStorage.getItem('avoid_geolocation') ?? '0';
-                if (storedRegion === 0 && avoidGeolocation === "0") {
+                if (storedRegion === '0' && avoidGeolocation === '0') {
                     console.log('Locating...');
                     navigator.geolocation.getCurrentPosition(success, error);
                 }
@@ -94,7 +94,7 @@ export default function Index({ data, location }) {
     }, []);
 
     function getZoneCode(date, region) {
-        if (region !== 0 && date !== 0) {
+        if (region !== '0' && date !== '0') {
             return regionsDates[date][region];
         }
         else {
@@ -105,7 +105,7 @@ export default function Index({ data, location }) {
     function getCurrentZoneCode() {
         let code = getZoneCode(state.date, state.region);
         // If all regions are in the same zone, the region is not mandatory.
-        if (sameZones(state.date) && code === "") {
+        if (state.date !== '0' && sameZones(state.date) && code === '') {
             code = getZoneCode(state.date, 'Lombardia');
         }
         return code;
@@ -119,12 +119,17 @@ export default function Index({ data, location }) {
     }
 
     function getZoneText() {
-        const code = getCurrentZoneCode();
-        if (code) {
-            return zones[code];
-        }
-        else if (sameZones(state.date)) {
-            return zones[getZoneCode(state.date, 'Lombardia')];
+        if (state.date !== '0') {
+            const code = getCurrentZoneCode();
+            if (code) {
+                return zones[code];
+            }
+            else if (sameZones(state.date)) {
+                return zones[getZoneCode(state.date, 'Lombardia')];
+            }
+            else {
+                return "Per favore scegli una regione e una data.";
+            }
         }
         else {
             return "Per favore scegli una regione e una data.";
@@ -132,11 +137,11 @@ export default function Index({ data, location }) {
     }
 
     function getDate() {
-        return state.date !== 0 ? state.date : '';
+        return state.date !== '0' ? state.date : '';
     }
 
     function getRegion() {
-        return state.region !== 0 ? Regions[state.region] : '';
+        return state.region !== '0' ? Regions[state.region] : '';
     }
 
     function getHeader() {
@@ -160,8 +165,6 @@ export default function Index({ data, location }) {
         // Date is also a property.
         return uniqueZones.length === 2;
     }
-
-    const siteTitle = "Oggi Posso";
 
     return (
         <Layout location={location}>
