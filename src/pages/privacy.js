@@ -31,7 +31,7 @@ export default function Privacy({ location }) {
                         per essere in grado di contattare i nostri visitatori e utenti con avvisi di servizi generali o personalizzati;
                     </li>
                     <li>
-                        per creare dati statistici aggregati e altre informazioni non personali aggregate e / o dedotte, che noi o i nostri partner commerciali possano utilizzare per fornire e migliorare i nostri rispettivi servizi;
+                        per creare dati statistici aggregati e altre informazioni non personali aggregate e / o dedotte;
                     </li>
                     <li>
                         per rispettare le leggi e i regolamenti applicabili
@@ -49,6 +49,14 @@ export default function Privacy({ location }) {
 
             <p>
                 Questo sito non utilizza cookie, ma utilizza il servizio di Cloudflare che fa utilizzo di un cookie, chiamato __cfduid, che viene usato principalmente contro i bot, che non contiene informazioni personali che possono essere decodificate, e verrà cancellato nel 2021 come si può leggere qui: https://blog.cloudflare.com/deprecating-cfduid-cookie/.
+            </p>
+
+            <p>
+                Questo sito utilizza una tecnologia chiamata Local Storage per salvare alcune impostazioni personali, come ad esempio l'ultima regione selezionata; le informazioni salvate in questo modo non sono accessibili a noi.
+            </p>
+
+            <p>
+                Questo sito utilizza una tecnologia di geolocalizzazione chiedendo preventivamente il permesso all'utente: questo dato è usato solo per impostare la regione dell'utente, e non è trasmesso a noi.
             </p>
 
             <p>
