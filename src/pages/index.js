@@ -7,6 +7,7 @@ import Layout from "../components/layout";
 import * as topojson from "topojson-client";
 import topodata from "../data/limits_IT_regions.topo.json";
 import * as d3 from "d3";
+import SEO from "../components/seo";
 
 
 export default function Index({ data, location }) {
@@ -164,6 +165,7 @@ export default function Index({ data, location }) {
 
     return (
         <Layout location={location}>
+            <SEO></SEO>
             <form>
                 <RegionSelector regions={Regions} state={state} dispatch={dispatch} />
                 <DateSelector dates={Object.keys(regionsDates)} state={state} dispatch={dispatch} />

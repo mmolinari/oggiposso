@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import LastUpdate from "./last-update";
 import Sources from "./sources";
+import layoutStyles from "./layout.module.css"
 
 const Layout = ({ location, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -41,6 +42,7 @@ const Layout = ({ location, children }) => {
 
           <LastUpdate></LastUpdate>
           <Sources></Sources>
+          <div className={layoutStyles.icon}>Icon made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
       </footer>
     </div>
   )

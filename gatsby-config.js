@@ -1,6 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: "oggiposso",
+    title: "Oggi posso",
+    titleTemplate: "Oggi posso",
+    description: "Le regole COVID-19 per regione.",
+    url: "https://www.oggiposso.it", // No trailing slash allowed!
+    image: "/images/clover.png", // Path to your image you placed in the 'static' folder
+    twitterUsername: "",
   },
   plugins: [
     {
