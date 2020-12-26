@@ -4,6 +4,9 @@ import { Regions } from "../labels/regions";
 import RegionSelector from "../components/region-selector";
 import DateSelector from "../components/date-selector";
 import Layout from "../components/layout";
+import * as topojson from "topojson-client";
+import topodata from "../data/limits_IT_regions.topo.json";
+import * as d3 from "d3";
 
 
 export default function Index({ data, location }) {
@@ -43,8 +46,43 @@ export default function Index({ data, location }) {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     React.useEffect(() => {
-        localStorage.setItem('region', state.region);
+        if (state.region !== 0) {
+            localStorage.setItem('region', state.region);
+        }
     }, [state]);
+
+    // Try to locate the user, only once.
+    React.useEffect(() => {
+        function success(position) {
+            const latitude  = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            // d3.geoContains works with geojson only.
+            const geodata = topojson.feature(topodata, topodata.objects.regions);
+
+            // Find the located region.
+            for (const region of geodata.features) {
+                if (d3.geoContains(region, [longitude, latitude])) {
+                    dispatch({type: 'region', 'region': region.properties.reg_name});
+                    break;
+                }
+            }
+        }
+
+        function error() {
+            console.log('Unable to retrieve your location');
+        }
+
+        if(!navigator.geolocation) {
+            console.log('Geolocation is not supported by your browser');
+        } else {
+            // No need to query if we already have a region.
+            if (initialState.region === 0) {
+                console.log('Locating...');
+                navigator.geolocation.getCurrentPosition(success, error);
+            }
+        }
+    }, []);
 
     function getZoneCode(date, region) {
         if (region !== 0 && date !== 0) {
