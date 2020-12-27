@@ -28,6 +28,7 @@ module.exports = {
         theme_color: `#228B22`,
         display: `fullscreen`,
         icon: `static/images/clover.png`,
+        include_favicon: false, // This will exclude favicon link tag
       },
     },
   ],
