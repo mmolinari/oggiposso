@@ -1,4 +1,4 @@
-import React, {useReducer} from "react"
+import React, {useReducer, useState} from "react"
 import {graphql} from "gatsby"
 import {Regions} from "../labels/regions";
 import RegionSelector from "../components/region-selector";
@@ -9,6 +9,7 @@ import topodata from "../data/limits_IT_regions.topo.json";
 import * as d3 from "d3";
 import SEO from "../components/seo";
 import MapChart from "../components/map-chart";
+import Calendar from "react-calendar";
 
 
 export default function Index ( { data, location } ) {
@@ -167,6 +168,12 @@ export default function Index ( { data, location } ) {
     return uniqueZones.length === 2;
   }
 
+  const [value, setValue] = useState(new Date());
+
+  function onChange(nextValue) {
+    setValue(nextValue);
+  }
+
   return (
     <Layout location={ location }>
       <SEO/>
@@ -174,7 +181,14 @@ export default function Index ( { data, location } ) {
         <RegionSelector regions={ Regions } state={ state } dispatch={ dispatch }/>
         <DateSelector dates={ Object.keys(regionsDates) } state={ state } dispatch={ dispatch }/>
         { process.env.NODE_ENV === "development" ? (
-          <MapChart state={ state } dispatch={ dispatch }/>
+          <div>
+            <MapChart state={ state } dispatch={ dispatch }/>
+            <Calendar
+              onChange={onChange}
+              value={value}
+              locale='it-IT'
+            />
+          </div>
         ) : null }
         <h2 className={ getZoneCode(state) }>
           { getHeader(state) }
