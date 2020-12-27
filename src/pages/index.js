@@ -8,6 +8,7 @@ import * as topojson from "topojson-client";
 import topodata from "../data/limits_IT_regions.topo.json";
 import * as d3 from "d3";
 import SEO from "../components/seo";
+import MapChart from "../components/map-chart";
 
 
 export default function Index ( { data, location } ) {
@@ -168,10 +169,13 @@ export default function Index ( { data, location } ) {
 
   return (
     <Layout location={ location }>
-      <SEO></SEO>
+      <SEO/>
       <form>
         <RegionSelector regions={ Regions } state={ state } dispatch={ dispatch }/>
         <DateSelector dates={ Object.keys(regionsDates) } state={ state } dispatch={ dispatch }/>
+        { process.env.NODE_ENV === "development" ? (
+          <MapChart state={ state } dispatch={ dispatch }/>
+        ) : null }
         <h2 className={ getZoneCode(state) }>
           { getHeader(state) }
         </h2>
