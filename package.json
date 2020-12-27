@@ -16,15 +16,18 @@
   },
   "license": "GNU Affero GPL",
   "dependencies": {
+    "autoprefixer": "^10.1.0",
     "d3": "^6.3.1",
     "fontsource-merriweather": "^4.0.0",
     "fontsource-montserrat": "^4.0.0",
     "gatsby": "^2.26.1",
     "gatsby-plugin-manifest": "^2.9.1",
+    "gatsby-plugin-postcss": "^3.4.0",
     "gatsby-plugin-react-helmet": "^3.7.0",
     "gatsby-source-filesystem": "^2.8.0",
     "gatsby-transformer-csv": "^2.7.0",
     "gatsby-transformer-remark": "^2.13.0",
+    "postcss": "^8.2.1",
     "react": "^16.13.1",
     "react-calendar": "^3.2.1",
     "react-dom": "^16.13.1",
@@ -33,6 +36,7 @@
     "topojson-client": "^3.1.0"
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0"
+    "gh-pages": "^3.1.0",
+    "tailwindcss": "^2.0.2"
   }
 }

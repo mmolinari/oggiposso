@@ -31,5 +31,6 @@ module.exports = {
         include_favicon: false, // This will exclude favicon link tag
       },
     },
+    `gatsby-plugin-postcss`,
   ],
 };
