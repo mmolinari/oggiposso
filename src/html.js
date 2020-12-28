@@ -11,7 +11,7 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <link rel="icon" href={'/images/clover_transparent.png'} type="image/png" />
+        <link rel="icon" href={'/images/clover_transparent2.png'} type="image/png" />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
