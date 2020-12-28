@@ -94,34 +94,33 @@ export default function Index ( { data, location } ) {
     }
   }, []);
 
-  function getZoneCode ( date, region ) {
-    if (region !== '0' && date !== '0') {
-      return regionsDates[date][region];
-    }
-    else {
-      return '';
-    }
-  }
+  function getZoneCode ( state ) {
+    let code = '';
 
-  function getCurrentZoneCode () {
-    let code = getZoneCode(state.date, state.region);
-    // If all regions are in the same zone, the region is not mandatory.
-    if (state.date !== '0' && sameZones(state.date) && code === '') {
-      code = getZoneCode(state.date, 'Lombardia');
+    if (state.date !== '0') {
+      if (state.region !== '0') {
+        code = regionsDates[state.date][state.region];
+      }
+
+      // If all regions are in the same zone, the region is not mandatory.
+      if (code === '' && sameZones(state.date)) {
+        code = regionsDates[state.date]['Lombardia'];
+      }
     }
+
     return code;
   }
 
-  function getZoneLabel () {
-    const code = getCurrentZoneCode();
+  function getZoneLabel ( state ) {
+    const code = getZoneCode(state);
     if (code) {
       return zoneLabels[code];
     }
   }
 
-  function getZoneText () {
+  function getZoneText ( state ) {
     if (state.date !== '0') {
-      const code = getCurrentZoneCode();
+      const code = getZoneCode(state);
       if (code) {
         return zones[code];
       }
@@ -137,22 +136,22 @@ export default function Index ( { data, location } ) {
     }
   }
 
-  function getDate () {
+  function getDate ( state ) {
     return state.date !== '0' ? state.date : '';
   }
 
-  function getRegion () {
+  function getRegion ( state ) {
     return state.region !== '0' ? Regions[state.region] : '';
   }
 
-  function getHeader () {
-    let code = getCurrentZoneCode();
+  function getHeader ( state ) {
+    let code = getZoneCode(state);
     if (code) {
       if (sameZones(state.date)) {
-        return "Tutte le regioni, " + getDate() + ": " + getZoneLabel();
+        return "Tutte le regioni, " + getDate(state) + ": " + getZoneLabel(state);
       }
       else {
-        return getRegion() + ", " + getDate() + ": " + getZoneLabel();
+        return getRegion(state) + ", " + getDate(state) + ": " + getZoneLabel(state);
       }
     }
   }
@@ -173,10 +172,10 @@ export default function Index ( { data, location } ) {
       <form>
         <RegionSelector regions={ Regions } state={ state } dispatch={ dispatch }/>
         <DateSelector dates={ Object.keys(regionsDates) } state={ state } dispatch={ dispatch }/>
-        <h2 className={ getCurrentZoneCode() }>
-          { getHeader() }
+        <h2 className={ getZoneCode(state) }>
+          { getHeader(state) }
         </h2>
-        <div dangerouslySetInnerHTML={ { __html: getZoneText() } }/>
+        <div dangerouslySetInnerHTML={ { __html: getZoneText(state) } }/>
       </form>
     </Layout>
   )
