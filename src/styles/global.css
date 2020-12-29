@@ -3,7 +3,10 @@
 @tailwind utilities;
 
 @layer components {
+  /* @todo: why don't these work when compiled? */
+
   /* styling for the parsed MDs */
+  /*
   .para {
     @apply mb-8;
   }
@@ -11,9 +14,24 @@
   .react-calendar__month-view__weekdays__weekday {
     @apply text-center;
   }
+  */
 
   /* no need to show the button to navigate by year */
+  /*
   .react-calendar__navigation__prev2-button, .react-calendar__navigation__next2-button {
     @apply hidden;
   }
+  */
+}
+
+.para {
+  margin-bottom: 1.5em;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  text-align: center;
+}
+
+.react-calendar__navigation__prev2-button, .react-calendar__navigation__next2-button {
+  display: none;
 }
