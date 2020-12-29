@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* styling for the parsed MDs */
 @layer components {
+  /* styling for the parsed MDs */
   .para {
     @apply mb-8;
   }
