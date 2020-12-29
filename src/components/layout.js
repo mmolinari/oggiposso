@@ -26,6 +26,12 @@ const Layout = ( { location, children } ) => {
     )
   }
 
+  function separator() {
+    return (
+      <span>{ ` ` } - { ` ` }</span>
+    );
+  }
+
   // @todo: display site name?
 
   return (
@@ -40,19 +46,19 @@ const Layout = ( { location, children } ) => {
           <span className="underline">
             <Link to="/">Home</Link>
           </span>
-          - { ` ` }
+          { separator() }
           <span className="underline">
             <Link to="/terms">Termini di utilizzo</Link>
           </span>
-          - { ` ` }
+          { separator() }
           <span className="underline">
             <Link to="/privacy">Informativa sulla privacy</Link>
           </span>
-          - { ` ` }
+          { separator() }
           <span className="underline">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiuthLNYyeeOd1n5J0dHclP-3mrRvv8K4lQGzkBlGem8-nzA/viewform">Contatti</a>
           </span>
-          - { ` ` }
+          { separator() }
           <span className="underline">
             <a href="https://github.com/mmolinari/oggiposso">GitHub</a>
           </span>
