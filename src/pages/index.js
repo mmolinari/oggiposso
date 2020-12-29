@@ -7,7 +7,6 @@ import Layout from "../components/layout";
 import * as topojson from "topojson-client";
 import topodata from "../data/limits_IT_regions.topo.json";
 import * as d3 from "d3";
-import SEO from "../components/seo";
 import MapChart from "../components/map-chart";
 import Calendar from "react-calendar";
 
@@ -170,6 +169,18 @@ export default function Index ( { data, location } ) {
     return colors[code];
   }
 
+  function getBgColor ( code ) {
+    const colors = {
+      'yellow': 'bg-yellow-400',
+      'yellow_christmas': 'bg-yellow-400',
+      'orange': 'bg-orange-500',
+      'red': 'bg-red-800',
+      'red_christmas': 'bg-red-800',
+    }
+
+    return colors[code];
+  }
+
   // Returns whether all regions are in the same zone.
   function sameZones ( date ) {
     const dayZones = Object.values(regionsDates[date]);
@@ -180,32 +191,82 @@ export default function Index ( { data, location } ) {
     return uniqueZones.length === 2;
   }
 
-  const [value, setValue] = useState(new Date());
+  function dateToString( date ) {
+    return date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+  }
 
-  function onChange(nextValue) {
-    setValue(nextValue);
+  function stringToDate( string ) {
+    let [day, month, year] = string.split('/');
+    month++;
+    let date = new Date();
+    date.setFullYear(year);
+    date.setMonth(month);
+    date.setDate(day);
+
+    return date;
+  }
+
+  function calendarTile( date, view, state ) {
+    const day = dateToString(date);
+    let zone;
+
+    if (state.region !== '0' && regionsDates[day] !== undefined && regionsDates[day][state.region] !== undefined) {
+      zone = regionsDates[day][state.region];
+    }
+
+    // If all regions are in the same zone, the region is not mandatory.
+    if (zone === null && sameZones(day) && regionsDates[day] !== undefined) {
+      zone = regionsDates[day]['Lombardia'] ?? null;
+    }
+
+    // m-1 py-1
+    let base = 'rounded-sm';
+
+    console.log(state.date, day);
+
+    if (state.date == day) {
+      base = base + ' border border-solid';
+    }
+    else {
+      base = base + ' border-none';
+    }
+
+    if (zone) {
+      base = base + ' ' + getBgColor(zone);
+    }
+
+    return base;
   }
 
   return (
     <Layout location={ location }>
-      <SEO/>
       <form>
-        <RegionSelector regions={ Regions } state={ state } dispatch={ dispatch }/>
-        <DateSelector dates={ Object.keys(regionsDates) } state={ state } dispatch={ dispatch }/>
-        { process.env.NODE_ENV === "development" ? (
-          <div>
-            <MapChart state={ state } dispatch={ dispatch }/>
+        <div className="flex">
+          <div className="h-screen sticky top-0 w-1/3 p-8">
+            <RegionSelector regions={ Regions } state={ state } dispatch={ dispatch }/>
+            <DateSelector dates={ Object.keys(regionsDates) } state={ state } dispatch={ dispatch }/>
             <Calendar
-              onChange={onChange}
-              value={value}
+              onChange={ ( value ) => dispatch({ type: 'date', 'date': dateToString(value) }) }
+              value={ stringToDate(state.date) }
               locale='it-IT'
+              tileClassName={ ( { date, view } ) => calendarTile(date, view, state) }
             />
           </div>
-        ) : null }
-        <h2 className={ getColor(getZoneCode(state)) + " text-3xl"}>
-          { getHeader(state) }
-        </h2>
-        <div className="mb-8" dangerouslySetInnerHTML={ { __html: getZoneText(state) } }/>
+          { process.env.NODE_ENV === "development" && false ? (
+            <div>
+              <MapChart
+                state={ state }
+                dispatch={ dispatch }
+              />
+            </div>
+          ) : null }
+          <div className="p-8 w-2/3">
+            <h2 className={ getColor(getZoneCode(state)) + " text-3xl"}>
+              { getHeader(state) }
+            </h2>
+            <div className="mb-8" dangerouslySetInnerHTML={ { __html: getZoneText(state) } }/>
+          </div>
+        </div>
       </form>
     </Layout>
   )
