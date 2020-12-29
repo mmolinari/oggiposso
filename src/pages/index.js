@@ -197,7 +197,7 @@ export default function Index ( { data, location } ) {
 
   function stringToDate( string ) {
     let [day, month, year] = string.split('/');
-    month++;
+    month--;
     let date = new Date();
     date.setFullYear(year);
     date.setMonth(month);
@@ -222,8 +222,7 @@ export default function Index ( { data, location } ) {
     // m-1 py-1
     let base = 'rounded-sm';
 
-    console.log(state.date, day);
-
+    // @todo: what type is state.date?
     if (state.date == day) {
       base = base + ' border border-solid';
     }
