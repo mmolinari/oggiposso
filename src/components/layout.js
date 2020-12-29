@@ -2,7 +2,6 @@ import React from "react"
 import {Link} from "gatsby"
 import LastUpdate from "./last-update";
 import Sources from "./sources";
-import layoutStyles from "./layout.module.css"
 
 const Layout = ( { location, children } ) => {
   const rootPath = `${ __PATH_PREFIX__ }/`
@@ -29,8 +28,8 @@ const Layout = ( { location, children } ) => {
   // @todo: display site name?
 
   return (
-    <div className="global-wrapper" data-is-root-path={ isRootPath }>
-      <header className="global-header"></header>
+    <div className="flex flex-wrap items-center justify-between max-w-4xl p-4 mx-auto md:p-8 font-sans text-gray-900" data-is-root-path={ isRootPath }>
+      <header/>
       <main>{ children }</main>
       <footer>
         <div>
@@ -44,7 +43,7 @@ const Layout = ( { location, children } ) => {
 
         <LastUpdate></LastUpdate>
         <Sources></Sources>
-        <div className={ layoutStyles.icon }>Icon made by <a href="https://www.flaticon.com/authors/freepik"
+        <div className="text-xs">Icon made by <a href="https://www.flaticon.com/authors/freepik"
                                                              title="Freepik">Freepik</a> from <a
           href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
       </footer>

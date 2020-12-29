@@ -158,6 +158,18 @@ export default function Index ( { data, location } ) {
     }
   }
 
+  function getColor ( code ) {
+    const colors = {
+      'yellow': 'text-yellow-400',
+      'yellow_christmas': 'text-yellow-400',
+      'orange': 'text-orange-500',
+      'red': 'text-red-800',
+      'red_christmas': 'text-red-800',
+    }
+
+    return colors[code];
+  }
+
   // Returns whether all regions are in the same zone.
   function sameZones ( date ) {
     const dayZones = Object.values(regionsDates[date]);
@@ -190,10 +202,10 @@ export default function Index ( { data, location } ) {
             />
           </div>
         ) : null }
-        <h2 className={ getZoneCode(state) }>
+        <h2 className={ getColor(getZoneCode(state)) + " text-3xl"}>
           { getHeader(state) }
         </h2>
-        <div dangerouslySetInnerHTML={ { __html: getZoneText(state) } }/>
+        <div className="mb-8" dangerouslySetInnerHTML={ { __html: getZoneText(state) } }/>
       </form>
     </Layout>
   )

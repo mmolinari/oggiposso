@@ -1,5 +1,4 @@
 import React from "react"
-import sourcesStyles from "./sources.module.css"
 
 export default function Sources () {
   const sources = [
@@ -16,7 +15,7 @@ export default function Sources () {
   }
 
   return (
-    <div className={ sourcesStyles.sources }>
+    <div className="text-xs">
       Fonti:
       <ul>
         { links }

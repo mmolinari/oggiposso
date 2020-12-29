@@ -17,7 +17,23 @@ module.exports = {
       },
     },
     `gatsby-transformer-csv`,
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-classes`,
+            options: {
+              classMap: {
+                "heading[depth=1]": "title",
+                "heading[depth=2]": "subtitle",
+                paragraph: "para",
+              }
+            }
+          }
+        ]
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -26,7 +42,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#228B22`,
         theme_color: `#228B22`,
-        display: `fullscreen`,
+        display: `minimal-ui`,
         icon: `static/images/clover.png`,
         include_favicon: false, // This will exclude favicon link tag
       },
