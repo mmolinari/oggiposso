@@ -29,7 +29,7 @@ const Layout = ( { location, children } ) => {
   // @todo: display site name?
 
   return (
-    <div className="container mx-auto px-4 font-sans text-gray-900" data-is-root-path={ isRootPath }>
+    <div className="container px-4 md:px-8 lg:px-12 font-sans text-gray-900" data-is-root-path={ isRootPath }>
       <SEO/>
       <header/>
       <main>{ children }</main>
