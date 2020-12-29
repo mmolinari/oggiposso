@@ -220,7 +220,7 @@ export default function Index ( { data, location } ) {
     }
 
     // m-1 py-1
-    let base = 'rounded-sm';
+    let base = 'rounded-sm py-2';
 
     // @todo: what type is state.date?
     if (state.date == day) {
@@ -231,10 +231,17 @@ export default function Index ( { data, location } ) {
     }
 
     if (zone) {
-      base = base + ' ' + getBgColor(zone);
+      base = base + ' ' + getColor(zone);
     }
 
     return base;
+  }
+
+  function calendarTileDisabled ( date, state ) {
+    if (regionsDates[dateToString(date)] !== undefined && regionsDates[dateToString(date)][state.region] !== undefined) {
+      return false;
+    }
+    return true;
   }
 
   return (
@@ -249,6 +256,8 @@ export default function Index ( { data, location } ) {
               value={ stringToDate(state.date) }
               locale='it-IT'
               tileClassName={ ( { date, view } ) => calendarTile(date, view, state) }
+              minDetail="month"
+              tileDisabled = { ( { activeStartDate, date, view } ) => calendarTileDisabled(date, state) }
             />
           </div>
           { process.env.NODE_ENV === "development" && false ? (

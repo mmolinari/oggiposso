@@ -8,3 +8,8 @@
     @apply mb-8;
   }
 }
+
+/* no need to move by year */
+.react-calendar__navigation__prev2-button, .react-calendar__navigation__next2-button {
+  display: none;
+}
