@@ -9,6 +9,7 @@ import topodata from "../data/limits_IT_regions.topo.json";
 import * as d3 from "d3";
 import MapChart from "../components/map-chart";
 import Calendar from "react-calendar";
+import ClientOnly from "../components/client-only";
 
 
 export default function Index ( { data, location } ) {
@@ -280,10 +281,12 @@ export default function Index ( { data, location } ) {
             </div>
           ) : null }
           <div className="p-8 md:w-2/3">
-            <h2 className={ getColor(getZoneCode(state)) + " text-3xl mb-4"}>
-              { getHeader(state) }
-            </h2>
-            <div className="mb-8" dangerouslySetInnerHTML={ { __html: getZoneText(state) } }/>
+            <ClientOnly>
+              <h2 className={ getColor(getZoneCode(state)) + " text-3xl mb-4"}>
+                { getHeader(state) }
+              </h2>
+              <div className="mb-8" dangerouslySetInnerHTML={ { __html: getZoneText(state) } }/>
+            </ClientOnly>
           </div>
         </div>
       </form>
