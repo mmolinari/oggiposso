@@ -272,7 +272,6 @@ export default function Index ( { data, location } ) {
               <div className="text-center pt-8">
                 <RegionSelector regions={ Regions } state={ state } dispatch={ dispatch }/>
               </div>
-              { process.env.NODE_ENV === "development" ? (
               <MapChart
                 state={ state }
                 dispatch={ dispatch }
@@ -281,7 +280,6 @@ export default function Index ( { data, location } ) {
                 regionsDates={ regionsDates }
                 className="pt-8"
               />
-              ) : null }
             </div>
             <div className="p-8 md:w-2/3">
               <h2 className={ getColor(getZoneCode(state)) + " text-3xl mb-4"}>
