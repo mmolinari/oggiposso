@@ -272,20 +272,21 @@ export default function Index ( { data, location } ) {
               <div className="text-center pt-8">
                 <RegionSelector regions={ Regions } state={ state } dispatch={ dispatch }/>
               </div>
+              { process.env.NODE_ENV === "development" ? (
+              <MapChart
+                state={ state }
+                dispatch={ dispatch }
+                width="200"
+                height="230"
+                className="pt-8"
+              />
+              ) : null }
             </div>
-            { process.env.NODE_ENV === "development" && false ? (
-              <div>
-                <MapChart
-                  state={ state }
-                  dispatch={ dispatch }
-                />
-              </div>
-            ) : null }
             <div className="p-8 md:w-2/3">
               <h2 className={ getColor(getZoneCode(state)) + " text-3xl mb-4"}>
                 { getHeader(state) }
               </h2>
-              <div className="mb-8" dangerouslySetInnerHTML={ { __html: getZoneText(state) } }/>
+            <div className="mb-8" dangerouslySetInnerHTML={ { __html: getZoneText(state) } }/>
             </div>
           </div>
         </form>

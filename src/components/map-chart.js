@@ -3,14 +3,15 @@ import {ComposableMap, Geographies, Geography,} from "react-simple-maps";
 
 import geoUrl from "../data/limits_IT_regions.topo.json";
 
-const MapChart = ( { state, dispatch } ) => {
+const MapChart = ( { state, dispatch, ...delegated } ) => {
   return (
     <ComposableMap
       projection={ "geoMercator" }
       projectionConfig={ {
-        scale: 1800,
-        center: [10, 43]
+        scale: 900,
+        center: [13, 42]
       } }
+      {...delegated}
     >
       <Geographies geography={ geoUrl }>
         { ( { geographies } ) =>
