@@ -247,49 +247,49 @@ export default function Index ( { data, location } ) {
 
   return (
     <Layout location={ location }>
-      <form>
-        <div className="md:flex">
-          <div className="md:h-screen md:sticky md:top-0 md:w-1/3 p-8">
-            <div>
-              <h1 className="font-mono text-2xl text-center p-4">Oggi posso</h1>
-            </div>
-            { false ? (
-            <div>
-              <DateSelector dates={ Object.keys(regionsDates) } state={ state } dispatch={ dispatch }/>
-            </div>
+      <ClientOnly>
+        <form>
+          <div className="md:flex">
+            <div className="md:h-screen md:sticky md:top-0 md:w-1/3 p-8">
+              <div>
+                <h1 className="font-mono text-2xl text-center p-4">Oggi posso</h1>
+              </div>
+              { false ? (
+                <div>
+                  <DateSelector dates={ Object.keys(regionsDates) } state={ state } dispatch={ dispatch }/>
+                </div>
               ) : null }
-            <div>
-              <Calendar
-                onChange={ ( value ) => dispatch({ type: 'date', 'date': dateToString(value) }) }
-                value={ stringToDate(state.date) }
-                locale='it-IT'
-                tileClassName={ ( { date, view } ) => calendarTile(date, view, state) }
-                minDetail="month"
-                tileDisabled = { ( { activeStartDate, date, view } ) => calendarTileDisabled(date, state) }
-              />
+              <div>
+                <Calendar
+                  onChange={ ( value ) => dispatch({ type: 'date', 'date': dateToString(value) }) }
+                  value={ stringToDate(state.date) }
+                  locale='it-IT'
+                  tileClassName={ ( { date, view } ) => calendarTile(date, view, state) }
+                  minDetail="month"
+                  tileDisabled = { ( { activeStartDate, date, view } ) => calendarTileDisabled(date, state) }
+                />
+              </div>
+              <div className="text-center pt-8">
+                <RegionSelector regions={ Regions } state={ state } dispatch={ dispatch }/>
+              </div>
             </div>
-            <div className="text-center pt-8">
-              <RegionSelector regions={ Regions } state={ state } dispatch={ dispatch }/>
-            </div>
-          </div>
-          { process.env.NODE_ENV === "development" && false ? (
-            <div>
-              <MapChart
-                state={ state }
-                dispatch={ dispatch }
-              />
-            </div>
-          ) : null }
-          <div className="p-8 md:w-2/3">
-            <ClientOnly>
+            { process.env.NODE_ENV === "development" && false ? (
+              <div>
+                <MapChart
+                  state={ state }
+                  dispatch={ dispatch }
+                />
+              </div>
+            ) : null }
+            <div className="p-8 md:w-2/3">
               <h2 className={ getColor(getZoneCode(state)) + " text-3xl mb-4"}>
                 { getHeader(state) }
               </h2>
               <div className="mb-8" dangerouslySetInnerHTML={ { __html: getZoneText(state) } }/>
-            </ClientOnly>
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </ClientOnly>
     </Layout>
   )
 }
