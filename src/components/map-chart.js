@@ -3,7 +3,20 @@ import {ComposableMap, Geographies, Geography,} from "react-simple-maps";
 
 import geoUrl from "../data/limits_IT_regions.topo.json";
 
-const MapChart = ( { state, dispatch, ...delegated } ) => {
+const MapChart = ( { state, dispatch, regionsDates, ...delegated } ) => {
+
+  function getRegionColor( region, date ) {
+    // @todo: clean up and merge with the colors in index.js.
+    const colors = {
+      'yellow': '#fbbf24',
+      'yellow_christmas': '#fbbf24',
+      'orange': '#ed8936',
+      'red': '#991b1b',
+      'red_christmas': '#991b1b',
+    }
+    return colors[regionsDates[date][region]];
+  }
+
   return (
     <ComposableMap
       projection={ "geoMercator" }
@@ -18,27 +31,29 @@ const MapChart = ( { state, dispatch, ...delegated } ) => {
           geographies.map(geo => <Geography
             key={ geo.rsmKey }
             geography={ geo }
-            onMouseEnter={ () => {
-              console.log(geo.properties.reg_name);
-              dispatch({ type: 'region', 'region': geo.properties.reg_name });
-            } }
             onClick={ () => {
-              //dispatch({type: 'region', 'region': geo.properties.reg_name});
-              console.log(geo.properties.reg_name);
+              dispatch({type: 'region', 'region': geo.properties.reg_name});
             } }
             style={ {
               default: {
-                fill: geo.properties.reg_name === state.region ? "#D6D6DA" : "#AAAAAA",
-                //stroke: geo.properties.reg_name === state.region ? "#FF0" : "#AAAAAA",
-                outline: "none"
+                fill: getRegionColor(geo.properties.reg_name, state.date),
+                outline: "none",
+                stroke: geo.properties.reg_name === state.region ? "#FFF" : "",
+                strokeWidth: 1,
+                strokeDasharray: "1,1",
               },
               hover: {
-                fill: "#D6D6DA",
-                outline: "none"
+                fill: getRegionColor(geo.properties.reg_name, state.date),
+                outline: "none",
+                stroke: "#FFF",
+                strokeWidth: 1,
+                strokeDasharray: "1,1"
               },
               pressed: {
-                fill: "#E42",
-                outline: "none"
+                fill: getRegionColor(geo.properties.reg_name, state.date),
+                outline: "none",
+                strokeWidth: 1,
+                strokeDasharray: "1,1"
               }
             } }
           />)

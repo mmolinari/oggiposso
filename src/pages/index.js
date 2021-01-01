@@ -278,6 +278,7 @@ export default function Index ( { data, location } ) {
                 dispatch={ dispatch }
                 width="200"
                 height="230"
+                regionsDates={ regionsDates }
                 className="pt-8"
               />
               ) : null }
