@@ -11,13 +11,13 @@ export default function Sources () {
 
   let links = [];
   for (const source of sources) {
-    links.push(<li><a href={ source }>{ source }</a></li>);
+    links.push(<li className="break-all"><a href={ source }>{ source }</a></li>);
   }
 
   return (
     <div className="text-xs">
       Fonti:
-      <ul>
+      <ul className="list-disc">
         { links }
       </ul>
     </div>
