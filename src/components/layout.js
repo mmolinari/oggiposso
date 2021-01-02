@@ -68,7 +68,7 @@ const Layout = ( { location, children } ) => {
           <LastUpdate></LastUpdate>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-8 2xl:mt-24">
           <Sources></Sources>
         </div>
 
