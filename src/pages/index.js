@@ -254,6 +254,9 @@ export default function Index ( { data, location } ) {
               <div>
                 <h1 className="font-mono text-2xl text-center p-4">Oggi posso</h1>
               </div>
+              <div className="text-center mb-4 text-sm italic">
+                4/1/21: ho letto sui media le "anticipazioni" per i prossimi giorni, ma non aggiorno niente fino a che non sono ufficiali.
+              </div>
               { false ? (
                 <div>
                   <DateSelector dates={ Object.keys(regionsDates) } state={ state } dispatch={ dispatch }/>
