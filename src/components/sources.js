@@ -8,7 +8,8 @@ export default function Sources () {
     'https://tg24.sky.it/cronaca/2020/12/19/calendario-divieti-natale-2020',
     'https://tg24.sky.it/cronaca/2020/12/19/natale-regole-spostamenti-pranzo-cenone',
     'https://www.ilpost.it/2021/01/05/nuove-restrizioni-coronavirus-decreto-legge-7-15-gennaio/',
-    'http://www.governo.it/sites/new.governo.it/files/Cdm_88.pdf'
+    'http://www.governo.it/sites/new.governo.it/files/Cdm_88.pdf',
+    'https://www.ilpost.it/2021/01/04/veneto-friuli-venezia-giulia-ordinanze-scuole-superiori-chiuse/'
   ];
 
   let links = [];
