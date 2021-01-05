@@ -1,6 +1,6 @@
 ---
-id: "yellow_christmas"
-label: "giallo, con eccezioni"
+id: "yellow_no_regions_school"
+label: "giallo, senza spostamenti tra regioni, superiori in presenza al 50%"
 language: "it"
 ---
 Vietato circolare dalle ore 22 alle ore 5 del mattino, salvo comprovati motivi di lavoro, necessità e salute.
@@ -13,7 +13,7 @@ Chiusura dei centri commerciali nei giorni festivi e prefestivi ad eccezione del
 
 Chiusura di musei e mostre.
 
-Didattica a distanza per le scuole superiori, fatta eccezione per gli studenti con disabilità e in caso di uso di laboratori; didattica in presenza per scuole dell’infanzia, scuole elementari e scuole medie. Chiuse le università, salvo alcune attività per le matricole e per i laboratori.
+**Didattica in presenza per le scuole superiori per il 50 per cento degli studenti**; didattica in presenza per scuole dell’infanzia, scuole elementari e scuole medie. Chiuse le università, salvo alcune attività per le matricole e per i laboratori.
 
 Riduzione fino al 50% per il trasporto pubblico, ad eccezione dei mezzi di trasporto scolastico.
 

@@ -5,6 +5,8 @@ language: "it"
 ---
 È vietato ogni spostamento, anche all’interno del proprio Comune, in qualsiasi orario, salvo che per motivi di lavoro, necessità e salute; vietati gli spostamenti da una Regione all’altra e da un Comune all’altro. **Ci sono deroghe per pranzi e cene con amici e parenti (https://tg24.sky.it/cronaca/2020/12/19/pranzo-natale-regole-faq).**
 
+Sono consentiti gli spostamenti dai Comuni con popolazione fino a 5.000 abitanti, entro 30 chilometri dai relativi confini, con esclusione degli spostamenti verso i capoluoghi di provincia.
+
 Chiusura di bar e ristoranti, 7 giorni su 7. L’asporto è consentito fino alle ore 22. Per la consegna a domicilio non ci sono restrizioni.
 
 Chiusura dei negozi, fatta eccezione per supermercati, beni alimentari e di necessità.

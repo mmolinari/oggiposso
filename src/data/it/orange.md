@@ -5,6 +5,8 @@ language: "it"
 ---
 Vietati gli spostamenti in entrata e in uscita da una Regione all’altra e da un Comune all’altro, salvo comprovati motivi di lavoro, studio, salute, necessità.
 
+Sono consentiti gli spostamenti dai Comuni con popolazione fino a 5.000 abitanti, entro 30 chilometri dai relativi confini, con esclusione degli spostamenti verso i capoluoghi di provincia.
+
 Vietato circolare dalle ore 22 alle ore 5 del mattino, salvo comprovati motivi di lavoro, necessità e salute.
 
 Raccomandazione di evitare spostamenti non necessari nel corso della giornata all'interno del proprio Comune.

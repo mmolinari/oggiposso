@@ -161,7 +161,8 @@ export default function Index ( { data, location } ) {
   function getColor ( code ) {
     const colors = {
       'yellow': 'text-yellow-400',
-      'yellow_christmas': 'text-yellow-400',
+      'yellow_no_regions_school': 'text-yellow-400',
+      'yellow_no_regions_no_school': 'text-yellow-400',
       'orange': 'text-orange-500',
       'red': 'text-red-800',
       'red_christmas': 'text-red-800',
@@ -173,7 +174,8 @@ export default function Index ( { data, location } ) {
   function getBgColor ( code ) {
     const colors = {
       'yellow': 'bg-yellow-400',
-      'yellow_christmas': 'bg-yellow-400',
+      'yellow_no_regions_school': 'bg-yellow-400',
+      'yellow_no_regions_no_school': 'bg-yellow-400',
       'orange': 'bg-orange-500',
       'red': 'bg-red-800',
       'red_christmas': 'bg-red-800',
@@ -254,8 +256,8 @@ export default function Index ( { data, location } ) {
               <div>
                 <h1 className="font-mono text-2xl text-center p-4">Oggi posso</h1>
               </div>
-              <div className="text-center mb-4 text-sm italic">
-                4/1/21: ho letto sui media le "anticipazioni" per i prossimi giorni, ma non aggiorno niente fino a che non sono ufficiali.
+              <div className="text-center mb-4 text-sm italic hidden">
+                Eventuali note, togliere "hidden" per mostrarle.
               </div>
               { false ? (
                 <div>

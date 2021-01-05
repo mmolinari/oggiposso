@@ -7,6 +7,8 @@ export default function Sources () {
     'https://www.ilsole24ore.com/art/coronavirus-mappa-e-restrizioni-zona-previste-nuovo-dpcm-ADDS4B0?refresh_ce=1',
     'https://tg24.sky.it/cronaca/2020/12/19/calendario-divieti-natale-2020',
     'https://tg24.sky.it/cronaca/2020/12/19/natale-regole-spostamenti-pranzo-cenone',
+    'https://www.ilpost.it/2021/01/05/nuove-restrizioni-coronavirus-decreto-legge-7-15-gennaio/',
+    'http://www.governo.it/sites/new.governo.it/files/Cdm_88.pdf'
   ];
 
   let links = [];
