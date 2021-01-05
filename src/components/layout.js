@@ -68,7 +68,7 @@ const Layout = ( { location, children } ) => {
           <LastUpdate></LastUpdate>
         </div>
 
-        <div className="m-8 xl:mt-36">
+        <div className="m-8">
           <Sources></Sources>
         </div>
 

@@ -250,7 +250,7 @@ export default function Index ( { data, location } ) {
       <ClientOnly>
         <form>
           <div className="md:flex">
-            <div className="md:h-screen md:sticky md:top-0 md:w-1/3 p-8">
+            <div className="md:w-1/3 p-8">
               <div>
                 <h1 className="font-mono text-2xl text-center p-4">Oggi posso</h1>
               </div>
