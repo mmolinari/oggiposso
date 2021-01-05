@@ -101,7 +101,12 @@ export default function Index ( { data, location } ) {
 
     if (state.date !== '0') {
       if (state.region !== '0') {
-        code = regionsDates[state.date][state.region];
+        if (regionsDates[state.date] !== undefined) {
+          code = regionsDates[state.date][state.region];
+        }
+        else {
+          code = 'unknown';
+        }
       }
 
       // If all regions are in the same zone, the region is not mandatory.
@@ -166,6 +171,7 @@ export default function Index ( { data, location } ) {
       'orange': 'text-orange-500',
       'red': 'text-red-800',
       'red_christmas': 'text-red-800',
+      'unknown': 'text-black',
     }
 
     return colors[code];
@@ -179,6 +185,7 @@ export default function Index ( { data, location } ) {
       'orange': 'bg-orange-500',
       'red': 'bg-red-800',
       'red_christmas': 'bg-red-800',
+      'unknown': 'text-black',
     }
 
     return colors[code];
@@ -186,6 +193,9 @@ export default function Index ( { data, location } ) {
 
   // Returns whether all regions are in the same zone.
   function sameZones ( date ) {
+    if (regionsDates[date] == undefined) {
+      return true;
+    }
     const dayZones = Object.values(regionsDates[date]);
     const uniqueZones = dayZones.filter(( value, index, self ) => {
       return self.indexOf(value) === index;
@@ -271,7 +281,6 @@ export default function Index ( { data, location } ) {
                   locale='it-IT'
                   tileClassName={ ( { date, view } ) => calendarTile(date, view, state) }
                   minDetail="month"
-                  tileDisabled = { ( { activeStartDate, date, view } ) => calendarTileDisabled(date, state) }
                 />
               </div>
               <div className="text-center pt-8">

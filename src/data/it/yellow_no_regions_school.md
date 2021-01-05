@@ -1,6 +1,6 @@
 ---
 id: "yellow_no_regions_school"
-label: "giallo, senza spostamenti tra regioni, superiori in presenza al 50%"
+label: "giallo, senza spostamenti tra regioni, scuole superiori in presenza al 50%"
 language: "it"
 ---
 Vietato circolare dalle ore 22 alle ore 5 del mattino, salvo comprovati motivi di lavoro, necessità e salute.

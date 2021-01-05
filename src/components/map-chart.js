@@ -15,7 +15,13 @@ const MapChart = ( { state, dispatch, regionsDates, ...delegated } ) => {
       'red': '#991b1b',
       'red_christmas': '#991b1b',
     }
-    return colors[regionsDates[date][region]];
+    if (regionsDates[date] !== undefined) {
+      return colors[regionsDates[date][region]];
+    }
+    else {
+      // Unknown.
+      return '#666';
+    }
   }
 
   return (
