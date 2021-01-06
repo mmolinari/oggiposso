@@ -8,7 +8,7 @@ PRs to fix code and data are welcome.
 
 TopoJSON source: https://github.com/openpolis/geojson-italy
 
-## Developement
+## Development
 
 ```
 npm install
