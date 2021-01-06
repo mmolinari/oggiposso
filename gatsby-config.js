@@ -42,7 +42,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#228B22`,
         theme_color: `#228B22`,
-        display: `minimal-ui`,
+        display: `browser`,
         icon: `static/images/clover.png`,
         include_favicon: false, // This will exclude favicon link tag
       },
