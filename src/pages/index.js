@@ -10,6 +10,7 @@ import * as d3 from "d3";
 import MapChart from "../components/map-chart";
 import Calendar from "react-calendar";
 import ClientOnly from "../components/client-only";
+import VaccinationCount from "../components/vaccination-count";
 
 
 export default function Index ( { data, location } ) {
@@ -265,6 +266,7 @@ export default function Index ( { data, location } ) {
             <div className="md:w-1/3 p-8">
               <div>
                 <h1 className="font-mono text-2xl text-center p-4">Oggi posso</h1>
+                <VaccinationCount className="text-center pb-4 text-sm italic" />
               </div>
               <div className="text-center mb-4 text-sm italic">
                 8/1/21: la settimana prossima alcune regioni potrebbero passare ad arancione, ma non aggiornerò fino a che non è ufficiale.
