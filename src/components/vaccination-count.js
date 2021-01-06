@@ -3,7 +3,7 @@ import React from "react"
 export default function VaccinationCount ( { ...delegated } ) {
 
   const url = 'https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/master/dati/vaccini-summary-latest.json';
-  const [count, setCount] = React.useState([0, 0]);
+  const [message, setMessage] = React.useState('');
 
   let getJSON = function ( url, callback ) {
     var xhr = new XMLHttpRequest();
@@ -25,24 +25,25 @@ export default function VaccinationCount ( { ...delegated } ) {
       function ( err, data ) {
         if (err !== null) {
           console.log(err);
+          setMessage('Errore nel caricamento dei dati delle vaccinazioni');
         } else {
           const reducer = (accumulator, currentValue) => accumulator + currentValue['dosi_somministrate'];
           let lastUpdate = new Date(data.data[0]['ultimo_aggiornamento']);
           // Data is updated at midnight, so this is the count up to yesterday.
           lastUpdate.setDate(lastUpdate.getDate() - 1);
           const formattedDate = lastUpdate.getDate() + "/" + (lastUpdate.getMonth() + 1) + "/" + lastUpdate.getFullYear();
-          setCount([data.data.reduce(reducer, 0), formattedDate]);
+          setMessage('Vaccini somministrati al ' + formattedDate + ': ' + data.data.reduce(reducer, 0));
         }
       });
   }, []);
 
-  if (!count[0]) {
+  if (!message) {
     return null;
   }
 
   return (
     <div {...delegated}>
-      Vaccini somministrati al {count[1]}: {count[0]}
+      {message}
     </div>
   )
 }
