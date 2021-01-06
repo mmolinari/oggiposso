@@ -68,12 +68,14 @@ const Layout = ( { location, children } ) => {
           <LastUpdate></LastUpdate>
         </div>
 
+        <div className="text-xs text-center">
+          Icon made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+          href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+        </div>
+
         <div className="m-8">
           <Sources></Sources>
         </div>
-
-        <div className="text-xs my-8">Icon made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
-          href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
       </footer>
     </div>
   )

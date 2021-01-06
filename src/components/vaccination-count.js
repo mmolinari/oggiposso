@@ -36,7 +36,7 @@ export default function VaccinationCount ( { ...delegated } ) {
       });
   }, []);
 
-  if (!count) {
+  if (!count[0]) {
     return null;
   }
 
