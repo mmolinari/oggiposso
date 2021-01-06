@@ -14,7 +14,7 @@ export default function LastUpdate () {
         }
       ` }
       render={ data => (
-        <div>Ultimo aggiornamento dei dati: { data.allFile.nodes[0].mtime }</div>
+        <div>Ultimo aggiornamento dei dati sulle regioni: { data.allFile.nodes[0].mtime }</div>
       ) }
     />
   )
