@@ -268,7 +268,7 @@ export default function Index ( { data, location } ) {
                 <h1 className="font-mono text-2xl text-center p-4">Oggi posso</h1>
                 <VaccinationCount className="text-center pb-4 text-sm italic" />
               </div>
-              <div className="text-center mb-4 text-sm italic">
+              <div className="text-center mb-4 text-sm italic hidden">
                 8/1/21: la settimana prossima alcune regioni potrebbero passare ad arancione, ma non aggiornerò fino a che non è ufficiale.
               </div>
               { false ? (
