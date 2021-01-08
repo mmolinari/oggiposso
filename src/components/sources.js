@@ -10,7 +10,9 @@ export default function Sources () {
     'https://www.ilpost.it/2021/01/05/nuove-restrizioni-coronavirus-decreto-legge-7-15-gennaio/',
     'http://www.governo.it/sites/new.governo.it/files/Cdm_88.pdf',
     'https://www.ilpost.it/2021/01/04/veneto-friuli-venezia-giulia-ordinanze-scuole-superiori-chiuse/',
-    'https://github.com/italia/covid19-opendata-vaccini'
+    'https://github.com/italia/covid19-opendata-vaccini',
+    'https://www.ilpost.it/2021/01/08/lombardia-emilia-romagna-veneto-sicilia-calabria-zona-arancione/',
+    'http://www.salute.gov.it/portale/nuovocoronavirus/dettaglioComunicatiNuovoCoronavirus.jsp?lingua=italiano&id=5731'
   ];
 
   let links = [];
