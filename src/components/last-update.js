@@ -8,7 +8,7 @@ export default function LastUpdate () {
         query {
           allFile(filter: {name: {eq: "regions-zones"}}) {
             nodes {
-              mtime(formatString: "D/M/YYYY h:mm")
+              mtime(formatString: "D/M/YYYY H:mm")
             }
           }
         }
