@@ -76,7 +76,7 @@ const Layout = ( { location, children } ) => {
             <div className="p-8">
               <Sources></Sources>
             </div>
-            <span onClick={switchMode} className="text-xs fixed bottom-3 right-3 cursor-pointer">{mode === 'light' ? '🌑' : '☀️'}</span>
+            <span onClick={switchMode} className="text-xs fixed bottom-2 right-2 cursor-pointer p-3">{mode === 'light' ? '🌑' : '☀️'}</span>
 
           </footer>
         </div>
