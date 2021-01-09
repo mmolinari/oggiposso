@@ -73,10 +73,11 @@ const Layout = ( { location, children } ) => {
               href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
             </div>
 
-            <div className="p-8">
+            <div className="p-4">
               <Sources></Sources>
             </div>
-            <span onClick={switchMode} className="text-xs fixed bottom-2 right-2 cursor-pointer p-3">{mode === 'light' ? '🌑' : '☀️'}</span>
+
+            <div onClick={switchMode} className="text-right cursor-pointer">{mode === 'light' ? '🌛' : '🌞️'}</div>
 
           </footer>
         </div>
