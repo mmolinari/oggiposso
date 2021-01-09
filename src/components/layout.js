@@ -77,7 +77,7 @@ const Layout = ( { location, children } ) => {
               <Sources></Sources>
             </div>
 
-            <div onClick={switchMode} className="text-right cursor-pointer">{mode === 'light' ? '🌛' : '🌞️'}</div>
+            <div onClick={switchMode} className="text-right cursor-pointer p-2">{mode === 'light' ? '🌛' : '🌞️'}</div>
 
           </footer>
         </div>
