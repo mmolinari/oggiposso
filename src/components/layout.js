@@ -7,7 +7,12 @@ import SEO from "./seo";
 const Layout = ( { location, children } ) => {
   const rootPath = `${ __PATH_PREFIX__ }/`
   const isRootPath = location.pathname === rootPath
-  const [mode, setMode] = React.useState(localStorage.getItem('theme') ?? 'light');
+  const [mode, setMode] = React.useState('light');
+
+  // localStorage is unknown during server side rendering.
+  React.useEffect(() => {
+    setMode(localStorage.getItem('theme') ?? 'light');
+  }, []);
 
   function switchMode () {
     let newMode;
