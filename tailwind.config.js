@@ -13,7 +13,7 @@ module.exports = {
     }
   },
   variants: {
-    extend: {},
+    typography: ["responsive", "dark"]
   },
   plugins: [
     require('@tailwindcss/forms'),

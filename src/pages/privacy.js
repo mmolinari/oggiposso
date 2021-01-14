@@ -6,7 +6,7 @@ export default function Privacy ( { location } ) {
   return (
     <Layout location={ location }>
 
-      <article className="prose prose-sm sm:prose lg:prose-lg mx-auto">
+      <article className="prose prose-sm sm:prose lg:prose-lg mx-auto text-gray-50">
 
         <i>
           Sotto c’è la policy completa che fa fede, ma l’idea generale è che noi del sito non abbiamo dati tuoi, a
