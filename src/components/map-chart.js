@@ -1,7 +1,7 @@
 import React from "react";
 import {ComposableMap, Geographies, Geography,} from "react-simple-maps";
 
-import geoUrl from "../data/limits_IT_regions.topo.json";
+import geoUrl from "../data/limits_IT_regions2.topo.json";
 
 const MapChart = ( { state, dispatch, regionsDates, ...delegated } ) => {
 

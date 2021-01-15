@@ -5,7 +5,7 @@ import RegionSelector from "../components/region-selector";
 import DateSelector from "../components/date-selector";
 import Layout from "../components/layout";
 import * as topojson from "topojson-client";
-import topodata from "../data/limits_IT_regions.topo.json";
+import topodata from "../data/limits_IT_regions2.topo.json";
 import * as d3 from "d3";
 import MapChart from "../components/map-chart";
 import Calendar from "react-calendar";
@@ -332,7 +332,8 @@ export const query = graphql`
           Sardegna
           Sicilia
           Toscana
-          Trentino_Alto_Adige
+          Trento
+          Bolzano
           Umbria
           Valle_d_Aosta
           Veneto
