@@ -269,7 +269,7 @@ export default function Index ( { data, location } ) {
                 <VaccinationCount className="text-center pb-4 text-sm italic" />
               </div>
               <div className="text-center mb-4 text-sm italic">
-                14/1/21 22:00: i colori dei prossimi giorni si dovrebbero sapere a breve, ma non c'è nulla di definitivo per ora.
+                15/1/21 21:30: non c'è ancora nulla di ufficiale. Non ho capito i colori di domani, sabato 16, ma sospetto che non si sappiano ancora ufficialmente.
               </div>
               { false ? (
                 <div>
