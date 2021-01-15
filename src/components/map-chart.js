@@ -9,11 +9,14 @@ const MapChart = ( { state, dispatch, regionsDates, ...delegated } ) => {
     // @todo: clean up and merge with the colors in index.js.
     const colors = {
       'yellow': '#fbbf24',
+      'yellow_jan': '#fbbf24',
       'yellow_no_regions_school': '#fbbf24',
       'yellow_no_regions_no_school': '#fbbf24',
       'orange': '#ed8936',
+      'orange_jan': '#ed8936',
       'red': '#991b1b',
       'red_christmas': '#991b1b',
+      'red_jan': '#991b1b',
     }
     if (regionsDates[date] !== undefined) {
       return colors[regionsDates[date][region]];

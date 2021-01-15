@@ -1,5 +1,5 @@
 ---
-id: "orange"
+id: "orange_jan"
 label: "arancione"
 language: "it"
 ---
