@@ -112,7 +112,12 @@ export default function Index ( { data, location } ) {
 
       // If all regions are in the same zone, the region is not mandatory.
       if (code === '' && sameZones(state.date)) {
-        code = regionsDates[state.date]['Lombardia'];
+        if (regionsDates[state.date] !== undefined) {
+          code = regionsDates[state.date]['Lombardia'];
+        }
+        else {
+          code = 'unknown';
+        }
       }
     }
 
@@ -269,7 +274,7 @@ export default function Index ( { data, location } ) {
                 <VaccinationCount className="text-center pb-4 text-sm italic" />
               </div>
               <div className="text-center mb-4 text-sm italic">
-                15/1/21 21:30: non c'è ancora nulla di ufficiale. Non ho capito i colori di domani, sabato 16, ma sospetto che non si sappiano ancora ufficialmente.
+                16/1/21 1:00: credo che non sia ancora ufficiale il colore di oggi, sabato 16. Pubblicherò un aggiornamento appena ci saranno dati ufficiali dal ministero della Salute.
               </div>
               { false ? (
                 <div>
