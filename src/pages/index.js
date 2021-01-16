@@ -178,6 +178,7 @@ export default function Index ( { data, location } ) {
       'red': 'text-red-800',
       'red_christmas': 'text-red-800',
       'unknown': 'text-black',
+      'jan16': 'text-black',
     }
 
     return colors[code];
@@ -192,6 +193,7 @@ export default function Index ( { data, location } ) {
       'red': 'bg-red-800',
       'red_christmas': 'bg-red-800',
       'unknown': 'text-black',
+      'jan16': 'text-black',
     }
 
     return colors[code];
@@ -273,7 +275,7 @@ export default function Index ( { data, location } ) {
                 <h1 className="font-mono text-2xl text-center p-4">Oggi posso</h1>
                 <VaccinationCount className="text-center pb-4 text-sm italic" />
               </div>
-              <div className="text-center mb-4 text-sm italic">
+              <div className="text-center mb-4 text-sm italic hidden">
                 16/1/21 1:00: credo che non sia ancora ufficiale il colore di oggi, sabato 16. Pubblicherò un aggiornamento appena ci saranno dati ufficiali dal ministero della Salute.
               </div>
               { false ? (
