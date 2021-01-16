@@ -12,7 +12,10 @@ export default function Sources () {
     'https://www.ilpost.it/2021/01/04/veneto-friuli-venezia-giulia-ordinanze-scuole-superiori-chiuse/',
     'https://github.com/italia/covid19-opendata-vaccini',
     'https://www.ilpost.it/2021/01/08/lombardia-emilia-romagna-veneto-sicilia-calabria-zona-arancione/',
-    'http://www.salute.gov.it/portale/nuovocoronavirus/dettaglioComunicatiNuovoCoronavirus.jsp?lingua=italiano&id=5731'
+    'http://www.salute.gov.it/portale/nuovocoronavirus/dettaglioComunicatiNuovoCoronavirus.jsp?lingua=italiano&id=5731',
+    'http://www.salute.gov.it/portale/news/p3_2_1_1_1.jsp?lingua=italiano&menu=notizie&p=dalministero&id=5272',
+    'http://www.governo.it/it/articolo/coronavirus-il-presidente-conte-firma-il-dpcm-del-14-gennaio-2021/16065',
+    'https://www.ilpost.it/2021/01/16/colori-regioni-ordinanza-17-gennaio/'
   ];
 
   let links = [];

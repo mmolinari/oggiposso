@@ -172,10 +172,13 @@ export default function Index ( { data, location } ) {
   function getColor ( code ) {
     const colors = {
       'yellow': 'text-yellow-400',
+      'yellow_jan': 'text-yellow-400',
       'yellow_no_regions_school': 'text-yellow-400',
       'yellow_no_regions_no_school': 'text-yellow-400',
       'orange': 'text-orange-500',
+      'orange_jan': 'text-orange-500',
       'red': 'text-red-800',
+      'red_jan': 'text-red-800',
       'red_christmas': 'text-red-800',
       'unknown': 'text-black',
       'jan16': 'text-black',
@@ -186,12 +189,15 @@ export default function Index ( { data, location } ) {
 
   function getBgColor ( code ) {
     const colors = {
-      'yellow': 'bg-yellow-400',
-      'yellow_no_regions_school': 'bg-yellow-400',
-      'yellow_no_regions_no_school': 'bg-yellow-400',
-      'orange': 'bg-orange-500',
-      'red': 'bg-red-800',
-      'red_christmas': 'bg-red-800',
+      'yellow': 'text-yellow-400',
+      'yellow_jan': 'text-yellow-400',
+      'yellow_no_regions_school': 'text-yellow-400',
+      'yellow_no_regions_no_school': 'text-yellow-400',
+      'orange': 'text-orange-500',
+      'orange_jan': 'text-orange-500',
+      'red': 'text-red-800',
+      'red_jan': 'text-red-800',
+      'red_christmas': 'text-red-800',
       'unknown': 'text-black',
       'jan16': 'text-black',
     }
