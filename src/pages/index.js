@@ -272,54 +272,15 @@ export default function Index ( { data, location } ) {
   }
 
   return (
-    <Layout location={ location }>
-      <ClientOnly>
-        <form>
-          <div className="md:flex">
-            <div className="md:w-1/3 p-8">
-              <div>
-                <h1 className="font-mono text-2xl text-center p-4">Oggi posso</h1>
-                <VaccinationCount className="text-center pb-4 text-sm italic" />
-              </div>
-              <div className="text-center mb-4 text-sm italic hidden">
-                16/1/21 1:00: credo che non sia ancora ufficiale il colore di oggi, sabato 16. Pubblicherò un aggiornamento appena ci saranno dati ufficiali dal ministero della Salute.
-              </div>
-              { false ? (
-                <div>
-                  <DateSelector dates={ Object.keys(regionsDates) } state={ state } dispatch={ dispatch }/>
-                </div>
-              ) : null }
-              <div>
-                <Calendar
-                  onChange={ ( value ) => dispatch({ type: 'date', 'date': dateToString(value) }) }
-                  value={ stringToDate(state.date) }
-                  locale='it-IT'
-                  tileClassName={ ( { date, view } ) => calendarTile(date, view, state) }
-                  minDetail="month"
-                />
-              </div>
-              <div className="text-center pt-8">
-                <RegionSelector regions={ Regions } state={ state } dispatch={ dispatch }/>
-              </div>
-              <MapChart
-                state={ state }
-                dispatch={ dispatch }
-                width="200"
-                height="230"
-                regionsDates={ regionsDates }
-                className="pt-8"
-              />
-            </div>
-            <div className="p-8 md:w-2/3">
-              <h2 className={ getColor(getZoneCode(state)) + " text-3xl mb-4"}>
-                { getHeader(state) }
-              </h2>
-            <div className="mb-8" dangerouslySetInnerHTML={ { __html: getZoneText(state) } }/>
-            </div>
-          </div>
-        </form>
-      </ClientOnly>
-    </Layout>
+    <article className="my-10 mx-auto prose lg:prose-xl">
+      <h2>Questo progetto è terminato.</h2>
+      <p>
+        Ci sono altri siti che rispondono alla stessa necessità, ma sono sviluppati e seguiti meglio, quindi non ho motivo per proseguire. Grazie di aver fatto condiviso questo sito e per i messaggi di supporto!
+      </p>
+      <p>
+        Io adesso consulto <a href="https://www.covidzone.info">covidzone.info</a>
+      </p>
+    </article>
   )
 }
 
