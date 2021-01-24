@@ -275,7 +275,7 @@ export default function Index ( { data, location } ) {
     <article className="my-10 mx-auto prose lg:prose-xl">
       <h2>Questo progetto è terminato.</h2>
       <p>
-        Ci sono altri siti che rispondono alla stessa necessità, ma sono sviluppati e seguiti meglio, quindi non ho motivo per proseguire. Grazie di aver fatto condiviso questo sito e per i messaggi di supporto!
+        Ci sono altri siti che rispondono alla stessa necessità, ma sono sviluppati e seguiti meglio, quindi non ho motivo per proseguire. Grazie di aver condiviso questo sito e per i messaggi di supporto!
       </p>
       <p>
         Io adesso consulto <a href="https://www.covidzone.info">covidzone.info</a>
